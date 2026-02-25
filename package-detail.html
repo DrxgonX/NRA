@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <title>Package Details - Solanki Tours</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +16,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo">
-                    <img src="assets/logo.png" alt="Solanki Logo">
+                    <img src="assets/Solanki-logo.svg" alt="Solanki Logo">
                     <div class="logo-text">
                         <h1>Solanki</h1>
                         <p class="tagline">Travel Beyond Boundaries</p>
@@ -129,24 +130,28 @@
                         
                         <div class="booking-form-section">
                             <h3>Quick Inquiry</h3>
-                            <form id="quickInquiryForm">
+                            <form id="quickInquiryForm" action="https://formsubmit.co/abhinav.singh4852@gmail.com" method="POST">
+                                <input type="hidden" name="_subject" value="Quick Package Inquiry - Solanki Tours">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="packageName" id="hidden-package-name" value="">
                                 <div class="form-group">
-                                    <input type="text" placeholder="Your Name" required>
+                                    <input type="text" name="name" placeholder="Your Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" placeholder="Your Email" required>
+                                    <input type="email" name="email" placeholder="Your Email" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" placeholder="Phone Number" required>
+                                    <input type="tel" name="phone" placeholder="Phone Number" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" placeholder="Travel Date">
+                                    <input type="date" name="travelDate" placeholder="Travel Date">
                                 </div>
                                 <div class="form-group">
-                                    <input type="number" placeholder="Number of Travelers" min="1" value="2">
+                                    <input type="number" name="travelers" placeholder="Number of Travelers" min="1" value="2">
                                 </div>
                                 <div class="form-group">
-                                    <textarea placeholder="Special Requirements" rows="3"></textarea>
+                                    <textarea name="requirements" placeholder="Special Requirements" rows="3"></textarea>
                                 </div>
                                 <button type="submit" class="btn-primary btn-block">Send Inquiry</button>
                             </form>
@@ -189,37 +194,50 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>Solanki</h3>
-                    <p>Creating unforgettable travel experiences since 2014. Your journey to extraordinary destinations starts here.</p>
+                <!-- Col 1: Logo -->
+                <div class="footer-col footer-col-logo">
+                    <img src="assets/Solanki-logo.svg" alt="Solanki Tours" class="footer-logo">
                 </div>
+                <!-- Col 2: Contact Info -->
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="packages.html">Tour Packages</a></li>
-                        <li><a href="index.html#destinations">Destinations</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item"><span>📍</span><span>A260 Ramagarden Karwal Nagar,<br>Main Mukiya Market,<br>Delhi 110091</span></div>
+                    <div class="footer-contact-item"><span>📧</span><span>Solankitourandtravel2206@gmail.com</span></div>
+                    <div class="footer-contact-item"><span>📞</span><span>+91 78953 48735</span></div>
                 </div>
-                <div class="footer-col">
-                    <h4>Popular Tours</h4>
-                    <ul>
-                        <li><a href="packages.html?dest=himachal">Himachal Tours</a></li>
-                        <li><a href="packages.html?dest=kerala">Kerala Backwaters</a></li>
-                        <li><a href="packages.html?dest=kashmir">Kashmir Paradise</a></li>
-                        <li><a href="packages.html?dest=rajasthan">Rajasthan Heritage</a></li>
-                        <li><a href="packages.html?dest=international">International Tours</a></li>
-                    </ul>
+                <!-- Col 3: Quick Links + Popular Tours -->
+                <div class="footer-col footer-col-links">
+                    <div class="footer-links-group">
+                        <div>
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="packages.html">Tour Packages</a></li>
+                                <li><a href="index.html#destinations">Destinations</a></li>
+                                <li><a href="index.html#about">About Us</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Popular Tours</h4>
+                            <ul>
+                                <li><a href="packages.html?dest=himachal">Himachal Tours</a></li>
+                                <li><a href="packages.html?dest=kerala">Kerala Backwaters</a></li>
+                                <li><a href="packages.html?dest=kashmir">Kashmir Paradise</a></li>
+                                <li><a href="packages.html?dest=rajasthan">Rajasthan Heritage</a></li>
+                                <li><a href="packages.html?dest=international">International Tours</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+                <!-- Col 4: Connect With Us -->
                 <div class="footer-col">
                     <h4>Connect With Us</h4>
                     <div class="social-links">
-                        <a href="#" class="social-icon">Facebook</a>
-                        <a href="#" class="social-icon">Instagram</a>
-                        <a href="#" class="social-icon">Twitter</a>
-                        <a href="#" class="social-icon">YouTube</a>
+                        <a href="#" class="social-icon"><img src="assets/social/facebook.png" alt="Facebook"> Facebook</a>
+                        <a href="#" class="social-icon"><img src="assets/social/instagram.png" alt="Instagram"> Instagram</a>
+                        <a href="#" class="social-icon"><img src="assets/social/linkedin.png" alt="LinkedIn"> LinkedIn</a>
+                        <a href="#" class="social-icon"><img src="assets/social/youtube.png" alt="YouTube"> YouTube</a>
                     </div>
                 </div>
             </div>

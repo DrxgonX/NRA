@@ -26,6 +26,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const enquiryForm = document.getElementById('enquiryForm');
     if (enquiryForm) {
         enquiryForm.addEventListener('submit', handleEnquiryForm);
+        
+        // Set min dates for enquiry form date range
+        const today = new Date().toISOString().split('T')[0];
+        const startDateInput = document.getElementById('enq-start-date');
+        const endDateInput = document.getElementById('enq-end-date');
+        if (startDateInput) {
+            startDateInput.setAttribute('min', today);
+            startDateInput.addEventListener('change', function() {
+                if (endDateInput) {
+                    endDateInput.setAttribute('min', this.value);
+                    if (endDateInput.value && endDateInput.value < this.value) {
+                        endDateInput.value = this.value;
+                    }
+                }
+            });
+        }
+        if (endDateInput) {
+            endDateInput.setAttribute('min', today);
+        }
     }
 
     // Smooth scroll for anchor links
@@ -107,18 +126,18 @@ function searchPackages() {
 
 // Handle contact form submission
 function handleContactForm(e) {
-    e.preventDefault();
-    
-    // Get form data
+    // Allow form to submit to FormSubmit.co
+    // Only prevent if validation fails
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     
-    // In a real application, you would send this to a server
-    console.log('Contact form data:', data);
+    if (!data.name || !data.email || !data.message) {
+        e.preventDefault();
+        alert('Please fill in all required fields.');
+        return;
+    }
     
-    // Show success message
-    alert('Thank you for contacting us! We will get back to you within 24 hours.');
-    e.target.reset();
+    // Form will submit naturally to FormSubmit.co
 }
 
 // Utility function to get URL parameters
@@ -202,33 +221,34 @@ function scrollToTop() {
 
 // Handle enquiry form submission
 function handleEnquiryForm(e) {
-    e.preventDefault();
-    
+    // Allow form to submit to FormSubmit.co
     const formData = new FormData(e.target);
     const enquiryData = {
         name: formData.get('name'),
         email: formData.get('email'),
         phone: formData.get('phone'),
-        date: formData.get('date'),
+        startDate: formData.get('startDate'),
+        endDate: formData.get('endDate'),
         adults: formData.get('adults'),
         kids: formData.get('kids'),
         comments: formData.get('comments')
     };
     
     // Simple validation
-    if (!enquiryData.name || !enquiryData.email || !enquiryData.phone || !enquiryData.date || !enquiryData.adults || !enquiryData.comments) {
+    if (!enquiryData.name || !enquiryData.email || !enquiryData.phone || !enquiryData.startDate || !enquiryData.adults || !enquiryData.comments) {
+        e.preventDefault();
         alert('Please fill in all required fields.');
         return;
     }
+
+    // Validate date range
+    if (enquiryData.endDate && enquiryData.startDate > enquiryData.endDate) {
+        e.preventDefault();
+        alert('End date must be after start date.');
+        return;
+    }
     
-    // In a real application, you would send this data to your server
-    console.log('Enquiry submitted:', enquiryData);
-    
-    // Show success message
-    alert('Thank you for your enquiry! We will get back to you within 24 hours.');
-    
-    // Reset form
-    e.target.reset();
+    // Form will submit naturally to FormSubmit.co
 }
 
 // Add scroll to top button
