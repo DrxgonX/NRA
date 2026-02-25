@@ -64,7 +64,7 @@ const tourPackages = [
             "Sightseeing Kullu-manikaran by car",
             "Inclusion of all taxes"
         ],
-        image: "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=600&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1606219547564-34d765d321ae?w=600"
     },
     {
         id: 4,
@@ -128,7 +128,7 @@ const tourPackages = [
             "Toll Taxes, Parking, Driver Allowance includes",
             "All Taxes Include"
         ],
-        image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?q=80&w=600&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1631217784848-6ae72f2d6293?w=600"
     },
     {
         id: 7,
@@ -185,7 +185,7 @@ const tourPackages = [
             "All transport and sightseeing by Individual Car",
             "All taxes are include"
         ],
-        image: "https://images.unsplash.com/photo-1617478993559-75ceef413f4a?w=600&auto=format&fit=crop&q=60"
+        image: "https://images.unsplash.com/photo-1605649487212-47bdab064df7?w=600"
     },
     {
         id: 10,
@@ -204,7 +204,7 @@ const tourPackages = [
             "All Transport and Sightseeing by Individual Car",
             "All Taxes Include"
         ],
-        image: "https://images.unsplash.com/photo-1624304549170-587094a07a1e?q=80&w=600&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=600"
     },
     {
         id: 11,

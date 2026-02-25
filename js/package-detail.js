@@ -88,12 +88,6 @@ function loadPackageDetails(id) {
         priceEl.textContent = currentPackage.price;
     }
     
-    // Set hidden package name for inquiry form
-    const hiddenPkgName = document.getElementById('hidden-package-name');
-    if (hiddenPkgName) {
-        hiddenPkgName.value = currentPackage.title;
-    }
-    
     // Update best time
     const bestTimeEl = document.getElementById('best-time');
     if (bestTimeEl) {
@@ -196,11 +190,19 @@ function loadRelatedPackages(currentPkg) {
 
 // Handle quick inquiry form
 function handleQuickInquiry(e) {
-    // Set the hidden package name field
-    const hiddenField = document.getElementById('hidden-package-name');
-    if (hiddenField && currentPackage) {
-        hiddenField.value = currentPackage.title;
-    }
+    e.preventDefault();
     
-    // Allow form to submit naturally to FormSubmit.co
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    
+    // Add package information
+    data.package = currentPackage.title;
+    data.packageId = currentPackage.id;
+    
+    // In a real application, send this to a server
+    console.log('Quick inquiry data:', data);
+    
+    // Show success message
+    alert(`Thank you for your inquiry about ${currentPackage.title}! Our travel experts will contact you within 24 hours.`);
+    e.target.reset();
 }

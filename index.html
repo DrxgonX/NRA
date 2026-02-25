@@ -15,7 +15,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo">
-                    <img src="assets/Solanki-logo.svg" alt="Solanki Logo">
+                    <img src="assets/logo.png" alt="Solanki Logo">
                     <div class="logo-text">
                         <h1>Solanki</h1>
                         <p class="tagline">Travel Beyond Boundaries</p>
@@ -70,34 +70,23 @@
     <section class="enquiry-section">
         <div class="container">
             <div class="enquiry-card">
-                <form method="POST" name="indexform" action="https://formsubmit.co/abhinav.singh4852@gmail.com" class="plan-tour" id="enquiryForm">
-                    <input type="hidden" name="_subject" value="New Tour Enquiry - Solanki Tours">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="">
-                    <input type="hidden" name="_template" value="table">
+                <form method="POST" name="indexform" action="contact-form-handler.php" class="plan-tour" id="enquiryForm">
                     <div class="plan-banner">
-                        <h4>PLAN YOUR DREAM <span>TOUR</span></h4>
+                        <span>PLAN YOUR</span>
+                        <h4>DREAM <span>TOUR</span></h4>
                     </div>
                     <div class="top-fields">
                         <div class="input-field">
-                            <label for="enq-name">Name</label>
-                            <input type="text" id="enq-name" placeholder="Your full name" name="name" required>
+                            <input type="text" placeholder="1. Name" name="name" required>
                         </div>
                         <div class="input-field">
-                            <label for="enq-email">Email</label>
-                            <input type="email" id="enq-email" placeholder="Your email address" name="email" required>
+                            <input type="email" placeholder="2. Email" name="email" required>
                         </div>
                         <div class="input-field">
-                            <label for="enq-phone">Phone</label>
-                            <input type="tel" id="enq-phone" placeholder="Your phone number" name="phone" required>
+                            <input type="tel" placeholder="3. Phone" name="phone" required>
                         </div>
                         <div class="input-field">
-                            <label for="enq-start-date">Travel Start Date</label>
-                            <input type="date" id="enq-start-date" name="startDate" required>
-                        </div>
-                        <div class="input-field">
-                            <label for="enq-end-date">Travel End Date</label>
-                            <input type="date" id="enq-end-date" name="endDate" required>
+                            <input type="date" placeholder="4. Date" name="date" required>
                         </div>
                     </div>
                     <div class="bottom-fields">
@@ -127,8 +116,7 @@
                             </select>
                         </div>
                         <div class="input-field col-md-3">
-                            <label for="enq-comments">Enquiry</label>
-                            <input type="text" id="enq-comments" placeholder="Your enquiry details" name="comments" required>
+                            <input type="text" placeholder="7. Enquiry" name="comments" required>
                         </div>
                         <div class="submit-btn col-md-2">
                             <input type="submit" value="Send Enquiry">
@@ -230,18 +218,22 @@
             </div>
             <div class="features-grid">
                 <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
                     <h3>Customized Itineraries</h3>
                     <p>Tailored tour packages designed to match your preferences and budget</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">💰</div>
                     <h3>Best Price Guarantee</h3>
                     <p>Competitive pricing with no hidden costs and flexible payment options</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
                     <h3>Expert Guidance</h3>
                     <p>Professional guides and 24/7 customer support throughout your journey</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">✅</div>
                     <h3>Trusted Service</h3>
                     <p>10+ years of experience with thousands of satisfied travelers</p>
                 </div>
@@ -322,21 +314,18 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" action="https://formsubmit.co/abhinav.singh4852@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="New Contact Message - Solanki Tours">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
+                    <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="text" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                            <input type="tel" placeholder="Phone Number" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn-primary">Send Message</button>
                     </form>
@@ -349,18 +338,10 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Col 1: Logo -->
-                <div class="footer-col footer-col-logo">
-                    <img src="assets/Solanki-logo.svg" alt="Solanki Tours" class="footer-logo">
-                </div>
-                <!-- Col 2: Contact Info -->
                 <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <div class="footer-contact-item">📍 A260 Ramagarden Karwal Nagar, Main Mukiya Market, Delhi 110091</div>
-                    <div class="footer-contact-item">📧 Solankitourandtravel2206@gmail.com</div>
-                    <div class="footer-contact-item">📞 +91 78953 48735</div>
+                    <h3>Solanki</h3>
+                    <p>Creating unforgettable travel experiences since 2014. Your journey to extraordinary destinations starts here.</p>
                 </div>
-                <!-- Col 3: Quick Links -->
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
@@ -371,7 +352,6 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <!-- Col 4: Popular Tours -->
                 <div class="footer-col">
                     <h4>Popular Tours</h4>
                     <ul>
@@ -382,14 +362,13 @@
                         <li><a href="packages.html?dest=international">International Tours</a></li>
                     </ul>
                 </div>
-                <!-- Col 5: Social -->
                 <div class="footer-col">
                     <h4>Connect With Us</h4>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><img src="assets/social/facebook.png" alt="Facebook"> Facebook</a>
-                        <a href="#" class="social-icon"><img src="assets/social/instagram.png" alt="Instagram"> Instagram</a>
-                        <a href="#" class="social-icon"><img src="assets/social/linkedin.png" alt="LinkedIn"> LinkedIn</a>
-                        <a href="#" class="social-icon"><img src="assets/social/youtube.png" alt="YouTube"> YouTube</a>
+                        <a href="#" class="social-icon">Facebook</a>
+                        <a href="#" class="social-icon">Instagram</a>
+                        <a href="#" class="social-icon">Twitter</a>
+                        <a href="#" class="social-icon">YouTube</a>
                     </div>
                 </div>
             </div>

@@ -69,6 +69,8 @@ function populatePackageDropdown() {
 
 // Handle booking form submission
 function handleBooking(e) {
+    e.preventDefault();
+    
     // Get form data
     const formData = new FormData(e.target);
     const data = {};
@@ -76,6 +78,7 @@ function handleBooking(e) {
     // Convert FormData to object
     for (let [key, value] of formData.entries()) {
         if (key === 'interests') {
+            // Handle multiple checkboxes
             if (!data[key]) data[key] = [];
             data[key].push(value);
         } else {
@@ -83,13 +86,35 @@ function handleBooking(e) {
         }
     }
     
-    // Validate form - prevent submission only if validation fails
+    // Get selected package details
+    const packageId = data.package;
+    if (packageId !== 'custom') {
+        const selectedPackage = tourPackages.find(pkg => pkg.id === parseInt(packageId));
+        if (selectedPackage) {
+            data.packageDetails = {
+                title: selectedPackage.title,
+                duration: selectedPackage.duration,
+                destinations: selectedPackage.destinations
+            };
+        }
+    }
+    
+    // Validate form
     if (!validateBookingForm(data)) {
-        e.preventDefault();
         return;
     }
     
-    // Form will submit naturally to FormSubmit.co
+    // In a real application, send this to a server
+    console.log('Booking data:', data);
+    
+    // Show success message
+    showSuccessMessage(data);
+    
+    // Reset form
+    e.target.reset();
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Validate booking form
